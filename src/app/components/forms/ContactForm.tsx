@@ -71,7 +71,6 @@ export default function ContactForm() {
         throw new Error('Server returned non-success response');
       }
     } catch (error) {
-      console.error('Error sending email:', error);
       setStatus({
         type: 'error',
         message: 'Failed to send message. Please try again later.'
