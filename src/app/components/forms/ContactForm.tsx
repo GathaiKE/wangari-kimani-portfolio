@@ -73,7 +73,7 @@ export default function ContactForm() {
     } catch (error) {
       setStatus({
         type: 'error',
-        message: 'Failed to send message. Please try again later.'
+        message: `Error: ${JSON.stringify(error)}. Please try again later.`
       });
     } finally {
       setForm(prev => ({ ...prev, isProcessing: false }));
