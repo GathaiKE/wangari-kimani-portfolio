@@ -55,6 +55,7 @@ export interface Testimonial {
 export interface Project {
         id: number
         title: string
+        overview: string
         desc: string
         tags: string[]
         gradient: string

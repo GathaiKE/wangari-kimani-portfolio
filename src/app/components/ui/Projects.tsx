@@ -125,7 +125,7 @@ const Projects = ({ data }: { data: Project[] }) => {
               <div className="p-6 flex-grow">
                 <h3 className="text-xl font-bold mb-3">{project.title}</h3>
                 <p className="text-text-secondary dark:text-text-secondary-dark mb-4 line-clamp-2">
-                  {project.desc.length > 100 ? `${project.desc.slice(0,99)}...`: project.desc}
+                  {project.overview.length > 100 ? `${project.overview.slice(0,99)}...`: project.overview}
                 </p>
 
                 {/* Tags */}
@@ -276,7 +276,7 @@ const Projects = ({ data }: { data: Project[] }) => {
               <div className="p-6">
                 <h4 className="text-xl font-bold mb-4">Project Overview</h4>
                 <p className="text-text-secondary dark:text-text-secondary-dark mb-6">
-                  {selectedProject.desc}
+                  {selectedProject.overview}
                 </p>
                 
                 {selectedProject.desc && (

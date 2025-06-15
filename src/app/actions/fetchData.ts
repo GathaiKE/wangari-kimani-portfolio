@@ -21,18 +21,24 @@ const aboutSectionData: AboutInfo = {
     title: "I Shape the Digital Frontier",
     descriptionA: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente corrupti magni delectus saepe vitae ut quibusdam, numquam aut id minima consequatur quod rerum praesentium sed repudiandae necessitatibus corporis facere quam.",
     descriptionB: "I specialize in creating solutions that not only solve today's challenges but anticipate tomorrow's opportunities. My approach combines rigorous research with agile development to deliver transformative technologies.",
+    // You can search for icons to use here to match your skill. Note that wihout an icon there will be a problem so make sure there is one.
     techStack: [
         { id: 1, icon: FaBrain, title: 'AI & Machine Learning' },
         { id: 2, icon: FaAtom, title: 'Quantum Computing' },
         { id: 3, icon: FaRobot, title: 'Advanced Robotics' },
         { id: 4, icon: FaShieldAlt, title: 'Cyber Security' }
     ],
-    profileImage: '/sunset.jpg',
+    profileImage: '/sunset.jpg', // Place you image in the public folder then copy the name of that image to this part below.
     phone: '+25400123456',
     email: 'wangarikimani.gmail.com',
     socials: {
-        github: 'https://github.com/GathaiKE/',
-        linkedIn: 'linked in link goes here',
+        // Add your links here and Remove the ones you won't use
+        github: "",
+        linkedIn: "",
+        kaggle: "",
+        discord: "",
+        twitter: "",
+        colab: ""
     }
 }
 
@@ -66,6 +72,7 @@ const testimonials: Testimonial[] = [
 const skills: SkillSet[] = [
     {
         id: 1,
+        // Again, usisahau icon
         icon: FaMicrochip, title: 'Advanced Computing',
         description: 'Quantum and neuromorphic computing solutions that push processing boundaries.'
     },
@@ -100,6 +107,7 @@ const projects: Project[] = [
     {
         id: 1,
         title: 'Quantum Neural Network',
+        overview: '',
         desc: 'Hybrid system combining quantum processing with neural networks for advanced pattern recognition.',
         tags: ['Quantum Computing', 'AI', 'Research'],
         gradient: 'from-primary to-secondary',
@@ -111,6 +119,7 @@ const projects: Project[] = [
     {
         id: 2,
         title: 'Omni-Secure Platform',
+        overview: '',
         desc: 'Blockchain-based security ecosystem adapting to emerging threats in real-time.',
         tags: ['Cyber Security', 'Blockchain', 'AI'],
         gradient: 'from-secondary to-primary',
@@ -122,6 +131,7 @@ const projects: Project[] = [
     {
         id: 3,
         title: 'Neuro-Link Interface',
+        overview: '',
         desc: 'Non-invasive BCI system for direct brain-digital communication.',
         tags: ['Neuroscience', 'Hardware', 'Innovation'],
         gradient: 'from-accent to-primary',
@@ -133,6 +143,7 @@ const projects: Project[] = [
     {
         id: 4,
         title: 'Quantum Neural Network',
+        overview: '',
         desc: 'Hybrid system combining quantum processing with neural networks for advanced pattern recognition.',
         tags: ['Quantum Computing', 'AI', 'Research'],
         gradient: 'from-primary to-secondary',
@@ -144,6 +155,7 @@ const projects: Project[] = [
     {
         id: 5,
         title: 'Omni-Secure Platform',
+        overview: '',
         desc: 'Blockchain-based security ecosystem adapting to emerging threats in real-time.',
         tags: ['Cyber Security', 'Blockchain', 'AI'],
         gradient: 'from-secondary to-primary',
@@ -155,6 +167,7 @@ const projects: Project[] = [
     {
         id: 6,
         title: 'Neuro-Link Interface',
+        overview: '',
         desc: 'Non-invasive BCI system for direct brain-digital communication.',
         tags: ['Neuroscience', 'Hardware', 'Innovation'],
         gradient: 'from-accent to-primary',
