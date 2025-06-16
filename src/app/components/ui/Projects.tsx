@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Project } from "@/app/interfaces";
 import { 
   FaCode, FaExternalLinkAlt, FaGithub, FaArrowDown, FaArrowUp, 
@@ -18,39 +18,53 @@ const Projects = ({ data }: { data: Project[] }) => {
   
   const displayedProjects = showAll ? data : data.slice(0, 3);
 
+
+  const handleNextImage = useCallback(() => {
+    if (!selectedProject?.images) return;
+    setCurrentImageIndex(prev => 
+      prev < selectedProject.images.length - 1 ? prev + 1 : 0
+    );
+  }, [selectedProject]);
+
+  const handlePrevImage = useCallback(() => {
+    if (!selectedProject?.images) return;
+    setCurrentImageIndex(prev => 
+      prev > 0 ? prev - 1 : selectedProject.images.length - 1
+    );
+  }, [selectedProject]);
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+    document.body.style.overflow = 'auto';
+  }, []);
+  
   const openProjectModal = (project: Project) => {
     setSelectedProject(project);
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedProject(null);
-    setCurrentImageIndex(0);
-    document.body.style.overflow = 'auto';
-  };
+  // const closeModal = () => {
+  //   setIsModalOpen(false);
+  //   setSelectedProject(null);
+  //   setCurrentImageIndex(0);
+  //   document.body.style.overflow = 'auto';
+  // };
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen) return;
       
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-      
-      if (e.key === 'ArrowLeft') {
-        handlePrevImage();
-      }
-      
-      if (e.key === 'ArrowRight') {
-        handleNextImage();
-      }
+      if (e.key === 'Escape') closeModal()
+      if (e.key === 'ArrowLeft') handlePrevImage()
+      if (e.key === 'ArrowRight') handleNextImage()
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isModalOpen, selectedProject, currentImageIndex]);
+  }, [isModalOpen, closeModal, handleNextImage, handlePrevImage]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -64,7 +78,7 @@ const Projects = ({ data }: { data: Project[] }) => {
     }
     
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isModalOpen]);
+  }, [isModalOpen, closeModal]);
 
   useEffect(() => {
     if (showAll && projectsRef.current) {
@@ -72,19 +86,6 @@ const Projects = ({ data }: { data: Project[] }) => {
     }
   }, [showAll]);
 
-  const handleNextImage = () => {
-    if (!selectedProject?.images) return;
-    setCurrentImageIndex(prev => 
-      prev < selectedProject.images.length - 1 ? prev + 1 : 0
-    );
-  };
-
-  const handlePrevImage = () => {
-    if (!selectedProject?.images) return;
-    setCurrentImageIndex(prev => 
-      prev > 0 ? prev - 1 : selectedProject.images.length - 1
-    );
-  };
 
   const modalTags = selectedProject?.tags.join(' • ') || '';
 

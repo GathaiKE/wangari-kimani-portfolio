@@ -19,16 +19,18 @@ const heroText: HeroText = {
 
 const aboutSectionData: AboutInfo = {
     title: "I Shape the Digital Frontier",
+    // These two descriptions are just to have the effect of two paragraphs kwa bio yako. You can omit the second one na hakutakuwa na issue
     descriptionA: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente corrupti magni delectus saepe vitae ut quibusdam, numquam aut id minima consequatur quod rerum praesentium sed repudiandae necessitatibus corporis facere quam.",
     descriptionB: "I specialize in creating solutions that not only solve today's challenges but anticipate tomorrow's opportunities. My approach combines rigorous research with agile development to deliver transformative technologies.",
     // You can search for icons to use here to match your skill. Note that wihout an icon there will be a problem so make sure there is one.
+    // search for icons on https://react-icons.github.io/react-icons/
     techStack: [
         { id: 1, icon: FaBrain, title: 'AI & Machine Learning' },
         { id: 2, icon: FaAtom, title: 'Quantum Computing' },
         { id: 3, icon: FaRobot, title: 'Advanced Robotics' },
         { id: 4, icon: FaShieldAlt, title: 'Cyber Security' }
     ],
-    profileImage: '/sunset.jpg', // Place you image in the public folder then copy the name of that image to this part below.
+    profileImage: '/sunset.jpg', // Place you image in the public folder then copy the name of that image to this part.
     phone: '+25400123456',
     email: 'wangarikimani.gmail.com',
     socials: {
@@ -186,6 +188,8 @@ const awards: Award[] = [
     { id: 5, title: 'CyberCore Solutions' },
     { id: 6, title: 'NanoTech Industries' }
 ]
+
+// Kazi yako imeishia apo bois
 
 export const fetchRoutes = (): Route[] => routes
 export const fetchHeroData = (): HeroText => heroText

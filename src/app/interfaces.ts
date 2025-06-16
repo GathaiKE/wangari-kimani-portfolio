@@ -17,6 +17,15 @@ export interface TechStack{
     title: string
 }
 
+export interface Social {
+    github?: string
+    linkedIn?: string
+    kaggle?: string
+    discord?: string
+    twitter?: string
+    colab?: string
+}
+
 export interface AboutInfo {
     title: string
     descriptionA: string
@@ -25,14 +34,7 @@ export interface AboutInfo {
     descriptionB?: string
     profileImage: string | null
     techStack: TechStack[]
-    socials: {
-        github?: string
-        linkedIn?: string
-        kaggle?: string
-        discord?: string
-        twitter?: string
-        colab?: string
-    }
+    socials: Social
 }
 
 export interface SkillSet {
