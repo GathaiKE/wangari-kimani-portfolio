@@ -23,7 +23,7 @@ const Home = async (): Promise<JSX.Element> => {
 
   return (
     <>
-      <Header data={routes}/>
+      <Header routes={routes} socials={profileData.socials} />
       <Hero data={heroData} />
       <About data={profileData} />
       <Skills data={skills} />

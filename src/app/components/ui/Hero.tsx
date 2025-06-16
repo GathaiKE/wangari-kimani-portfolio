@@ -13,7 +13,7 @@ const Hero = ({data}:{data: HeroText}) => {
           </h1>
           <p className="text-lg md:text-xl mb-8 text-text-secondary dark:text-text-secondary-dark">{data.description}</p>
           <a
-            href="#projects"
+            href="#about"
             className="relative inline-block px-8 py-3 text-white font-semibold bg-gradient-to-r from-primary to-primary rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden group"
           >
 
